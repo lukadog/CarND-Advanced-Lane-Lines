@@ -6,19 +6,18 @@
 The goals / steps of this project are the following:
 
 * Compute the camera calibration matrix and distortion coefficients.
-* Apply a distortion correction to raw images.
-* Use gradients and color thresholding etc., to create a binary image that better represents the lanes.
-* Apply a perspective transform to unwarp the binary image ("birds-eye view").
-* Detect lane pixels and fit to find the lane boundary.
+* Undistort the raw images.
+* Use combination of gradients and color thresholding etc., to create a binary image that better represents the lanes.
+* Apply perspective transform to warp the binary image to top down view (aka "birds-eye view").
+* Detect pixels that belong to the lanes using a sliding window technique and fit them into a polyline.
 * Determine the curvature of the lane and vehicle position with respect to center.
-* Warp the detected lane boundaries back onto the original image.
-* Output visual display of the lane boundaries and numerical estimation of lane curvature and vehicle position.
+* Warp the detected lane back onto the original image.
+* Display visual display of the lane lines, pavement and lane curvature and vehicle position.
 
 [//]: # (Image References)
 
 [im01]: ./examples/gbao_calibration.png "Chessboard Calibration"
 [im02]: ./examples/gbao_calibration_result.png "Calibration Result"
-
 
 
 ### Camera calibration:
