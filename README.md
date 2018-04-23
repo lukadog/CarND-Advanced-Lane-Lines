@@ -18,6 +18,7 @@ The goals / steps of this project are the following:
 
 [im01]: ./examples/gbao_calibration.png "Chessboard Calibration"
 [im02]: ./examples/gbao_calibration_result.png "Calibration Result"
+[im03]: ./examples/gbao_image_pipe.png "Image processing pipeline"
 
 
 ### Camera calibration:
@@ -61,7 +62,16 @@ for i in range(1, 20):
 ```
 
 
-The image below illustrate the result of applying `undistort_image`, using the calibration and distortion coefficients to one of the chessboard images:
+The image below illustrates the result of applying `undistort_image`, using the calibration and distortion coefficients to one of the chessboard images:
 ![alt text][im02]
 
+### Image processing pipeline:
 
+The image processing pipeline is handled by `process_image_pipeline`, which is comprised of below steps:
+* Convert BGR image into RGB (depends how you read the image)
+* Resize the image to consistent size so it's invariant to raw input images.
+* Undistort the image using calibration matrix
+* Generate binary image using x direction gradient and S chanel threshold of HLS color space
+* Warp the binary image to top down view
+
+![alt text][im03]
