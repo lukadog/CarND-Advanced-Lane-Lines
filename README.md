@@ -16,9 +16,11 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[im01]: ./examples/gbao_calibration.png "Chessboard Calibration"
-[im02]: ./examples/gbao_calibration_result.png "Calibration Result"
-[im03]: ./examples/gbao_image_pipe.png "Image processing pipeline"
+[im01]: ./examples/gbao_calibration.png "Chessboard calibration"
+[im02]: ./examples/gbao_calibration_result.png "Calibration result"
+[im03]: ./examples/gbao_unwarp.png "Image processing pipeline"
+[im04]: ./examples/gbao_unwarp_lane_binary.png "Result of warp iamge"
+
 
 
 ### Camera calibration:
@@ -75,3 +77,7 @@ The image processing pipeline is handled by `process_image_pipeline`, which is c
 * Warp the binary image to top down view
 
 ![alt text][im03]
+
+Below shows a result of the output of the image processing pipeline
+
+![alt text][im04]
