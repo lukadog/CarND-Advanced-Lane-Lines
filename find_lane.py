@@ -122,6 +122,21 @@ def process_image_pipeline(img, objpoints, imgpoints, perspective_matrix):
 	combined_binary[(color_s_binary == 1) | (grad_x_binary == 1)] = 1
 	# 8) Get unwarp_image from undist_img using perspective_matrix
 	unwarp_img = unwarp_image(combined_binary, perspective_matrix)
+
+	# f, (ax1, ax2, ax3, ax4) = plt.subplots(4, 1, figsize=(20, 50))
+	# f.tight_layout()
+	# ax1.imshow(rgb_img)
+	# ax1.set_title('Original Image', fontsize = 10)
+	# ax2.imshow(undist_rgb_img)
+	# ax2.set_title('Undistorted Image', fontsize = 10)
+	# ax3.imshow(combined_binary, cmap = 'gray')
+	# ax3.set_title('Binary Image', fontsize = 10)
+	# ax4.imshow(unwarp_img, cmap='gray')
+	# ax4.set_title('Warp Binary Image', fontsize=10)
+	# plt.subplots_adjust(hspace=0.3)
+
+	# plt.show()
+
 	return unwarp_img
 
 
